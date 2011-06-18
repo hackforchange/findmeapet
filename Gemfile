@@ -29,4 +29,11 @@ gem 'rails', '3.0.9'
 
 gem 'pg'
 gem 'heroku'
-gem 'rspec'
+gem 'nokogiri'
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.4"
+  gem 'vcr'
+  gem 'fakeweb'
+  gem 'sqlite3'
+end
