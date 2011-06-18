@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+  <title>Find Me a Pet.org | Instant notification when a pet becomes available in your area.</title>
+  <link href="../../../public/stylesheets/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div id="container">
+  <div id="head"><h1 class="title">Find Me a Pet.org</h1>
+
+    <p class="tagline">Instant notification when a pet becomes available in your area.</p></div>
+  <div id="content">
+    <div id="comment">Congratulations. We found you a match!</div>
+    <div id="image"><img src="<%= @pet.image_url%>" alt="dog" width="100%" height="100%"/></div>
+    <div id="name">Meet <%= @pet.name %>.</div>
+    <div id="petinfo">
+      <div id="infoleft"><strong>Age:</strong> <%= @pet.age/365 %> years<br/><strong>Neutered/Spayed?:</strong>
+        unknown<br/><strong>Color:</strong> <%= @pet.color %>
+        <br/><strong>Breed: </strong><%= @pet.breed %> <strong><br/>Location:</strong> Miami, FL
+      </div>
+      <div id="inforight">
+        <div><strong>Days at shelter:</strong></div>
+        <div class="length"><%= distance_of_time_in_words_to_now(@pet.brought_to_shelter_at) %></div>
+      </div>
+    </div>
+
+    <div id="reserve"><h2 style="margin-top: 20px; ">Reserve this pet!</h2>
+
+      <p style="margin-top: -10px;">Call the Miami-Dade Animal Services today at
+
+        (305) 884-1101</p>
+
+      <p>Ask about animal ID <%= @pet.petharbor_id %></p></div>
+
+  </div>
+
+
+</div>
+
+</body>
+</html>

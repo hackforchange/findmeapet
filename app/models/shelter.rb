@@ -42,7 +42,8 @@ class Shelter < ActiveRecord::Base
         :breed => tds[4].content,
         :age => parse_age_from_td(tds[5]),
         :brought_to_shelter_at => parse_date_from_td(tds[6]),
-        :shelter_id => self.id
+        :shelter_id => self.id,
+        :image_uri => tds[0].css('img')[0].attribute('src').value
     )
   end
 
