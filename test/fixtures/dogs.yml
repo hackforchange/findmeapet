@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  shelter_id: 1
+  neutered: false
+  size: MyString
+  url: MyString
+  photo_url: MyString
+
+two:
+  shelter_id: 1
+  neutered: false
+  size: MyString
+  url: MyString
+  photo_url: MyString
