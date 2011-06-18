@@ -47,3 +47,5 @@ Findmeapet::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 end
+APP_ID = '208725265839462'
+APP_SECRET = 'c54b78c2ae112bce29291ead14645da4'
