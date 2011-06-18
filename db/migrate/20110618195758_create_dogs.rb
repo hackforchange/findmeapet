@@ -14,7 +14,6 @@ class CreateDogs < ActiveRecord::Migration
       t.integer :age # days
       t.date :brought_to_shelter_at
 
-
       t.timestamps
     end
   end
