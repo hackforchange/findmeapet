@@ -30,6 +30,7 @@ gem 'rails', '3.0.9'
 gem 'pg'
 gem 'heroku'
 gem 'nokogiri'
+gem 'thin'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
