@@ -4,7 +4,7 @@ require 'open-uri'
 class Shelter < ActiveRecord::Base
   #validates_presence_of :title, :latitude, :longitude, :shelter_code
   validates_uniqueness_of :shelter_code, :title
-  has_many :dogs
+  has_many :pets
 
   def shelter_code
     'MIAD'
@@ -22,19 +22,19 @@ class Shelter < ActiveRecord::Base
     '-80.134065'
   end
 
-  def update_dogs_first_page_only
+  def update_pets_first_page_only
     doc = Nokogiri::HTML(open("http://www.petharbor.com/results.asp?searchtype=ADOPT&start=4&stylesheet=include/default.css&frontdoor=1&friends=1&samaritans=1&nosuccess=0&orderby=Brought%20to%20the%20Shelter&rows=10&imght=120&imgres=thumb&view=sysadm.v_animal&nomax=1&fontface=arial&fontsize=10&miles=200&lat=25.813025&lon=-80.134065&shelterlist=%27#{shelter_code}%27&atype=dog&where=type_DOG&PAGE=1"))
 
-    doc.css('table.ResultsTable tr')[1..-1].each do |dog_item|
-      tds = dog_item.css('td')
+    doc.css('table.ResultsTable tr')[1..-1].each do |pet_item|
+      tds = pet_item.css('td')
       petharbor_id = tds[1].content[/(.*) \((.*)\)/, 2]
-      create_dog_from_tds(tds) if Dog.find_by_petharbor_id(petharbor_id).blank?
+      create_pet_from_tds(tds) if Pet.find_by_petharbor_id(petharbor_id).blank?
     end
 
   end
 
-  def create_dog_from_tds(tds)
-    Dog.create(
+  def create_pet_from_tds(tds)
+    Pet.create(
         :petharbor_id =>tds[1].content[/(.*) \((.*)\)/, 2],
         :name => tds[1].content[/(.*) \((.*)\)/, 1],
         :gender => tds[2].content,
@@ -46,19 +46,19 @@ class Shelter < ActiveRecord::Base
     )
   end
 
-  def update_dogs
+  def update_pets
     doc = Nokogiri::HTML(open(url_for_page(1)))
     total_pages = get_total_pages(doc)
 
     total_pages.downto(1).each do |page|
       doc = Nokogiri::HTML(open(url_for_page page))
-      doc.css('table.ResultsTable tr').reverse[0..-2].each do |dog_item|
-        tds = dog_item.css('td')
+      doc.css('table.ResultsTable tr').reverse[0..-2].each do |pet_item|
+        tds = pet_item.css('td')
         petharbor_id = tds[1].content[/(.*) \((.*)\)/, 2]
-        if Dog.find_by_petharbor_id(petharbor_id).present?
+        if Pet.find_by_petharbor_id(petharbor_id).present?
           return
         else
-          create_dog_from_tds(tds)
+          create_pet_from_tds(tds)
         end
       end
     end
