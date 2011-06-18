@@ -40,6 +40,9 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.xml
   def create
+    rg = RestGraph.new( :app_id => APP_ID, :secret => APP_SECRET)
+    parsed_request = rg.parse_signed_request!(params["signed_request"])
+    puts parsed_request.inspect
     @person = Person.new(params[:person])
 
     respond_to do |format|
