@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* the body of the page */
+body { background-color: #e2ebf0; font-family: verdana; color: #0f487f; }
+/* non-hyperlink anchor tags */
+a 
+{
+
+} 
+/* hyperlink, hyperlink that has been visited */
+a:link, a:visited
+{
+ 
+}
+/* hyperlink being hovered over, hyperlink being pressed */
+a:active, a:hover
+{
+ 
+}
+/* items on page with class Button */
+a.button
+{
+ 
+}
+
+/* the base font of the page */
+font
+{
+	font-family: verdana;
+	font-size: 10pt;
+	font-weight: none;
+}
+/* for text with class="Small" (customize this view)*/
+font.small
+{
+  font-size:9pt;
+}	
+/* with class="Big" */
+font.big
+{
+  font-size:12pt;
+}    
+/* results.asp, the "CURRENT SEARCH" title */
+font.title
+{
+  font-size:14pt;
+  font-weight:bold;
+}
+
+/* disclaimers, generally */
+font.tiny
+{
+  font-size:xx-small;
+  font-weight: none;
+}    	
+
+
+.petinfo
+{
+  text-align: center;
+  padding: 5;
+}
+
+#container { width: 100%; margin: auto; }
+#title { color: #0f487f; }
+.tagline { color: #0f487f; margin-top: -20px; }
+#content {}
+/* congrats text */
+#comment {  color: #0f487f; font-size: 20px; } 
+#image { margin-top: 20px; }
+#name { font-size: 24px; margin: 20px 0px; font-weight: bold; }
+#petinfo { width: 100%; float: left; background-color: #003366;  padding: 15px; }
+#infoleft { width: 50%; float: left; color: #e2ebf0; }
+#inforight { float: left;  margin-left: 15px; color: #e2ebf0; }
+/*length of stay number */
+.length { font-size: 30px; font-weight: bold; margin:  15px;	 }
+#reserve { clear: both; }
