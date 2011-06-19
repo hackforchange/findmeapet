@@ -1,6 +1,11 @@
 class PeopleController < ApplicationController
   # GET /people
   # GET /people.xml
+   
+  def registration
+    raise params.inspect
+  end
+
   def index
     @people = Person.all
 
@@ -42,7 +47,6 @@ class PeopleController < ApplicationController
   def create
     #rg = RestGraph.new( :app_id => APP_ID, :secret => APP_SECRET)
     #parsed_request = rg.parse_signed_request!(params["signed_request"])
-    raise params.inspect
     @person = Person.new(params[:person])
 
     respond_to do |format|
