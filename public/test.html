@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Adopt <%= @pet.name %> | FindMeAPet.org</title>
+
+<link href="stylesheets/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="twoColHybLt">
+
+
+<div id="header">
+  <h1 class="title">Find Me a Pet.org</h1>
+  <p class="tagline">Instant notification when a pet becomes available in your area.</p>
+</div>
+
+<div id="container">
+  <div id="sidebar1">
+    <h3>Adopt this pet!</h3>
+    <p>Call the Miami-Dade Animal Services today at (305) 884-1101</p>
+	<p>Ask about animal ID A1358021</p>
+	<p>Follow <a href="http://www.twitter.com/pet_adopt" target="_blank">@pet_adopt</a> on Twitter.</p>
+  <!-- end #sidebar1 --></div>
+  <div id="mainContent">
+    <h1 class="congrats">Congratulations.<br />We found you a match!</h1>
+    <p class="img"><img src="<%= @pet.image_url%>" alt="<%= @pet.name %>" height="300"></p>
+    <h2 class="desc_head">Meet <%= @pet.name %>.</h2>
+    <p class="desc">
+            <strong>Age:</strong> <%= @pet.age/365 %> years<br/><strong>Neutered/Spayed?:</strong> unknown<br/>
+            <strong>Color:</strong> <%= @pet.color %><br />
+            <strong>Breed: </strong><%= @pet.breed %><br />
+            <strong>Location:</strong> Miami, FL</p>
+     <p class="length"><strong>Days at shelter:</strong><br />         <div class="length" style="text-transform:capitalize"><%= distance_of_time_in_words_to_now(@pet.brought_to_shelter_at) %></div>
+
+        </p>
+    
+    
+  <!-- end #mainContent --></div>
+	<!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats --><br class="clearfloat" />
+<!-- end #container --></div>
+</body>
+</html>

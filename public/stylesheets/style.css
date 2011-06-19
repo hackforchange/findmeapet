@@ -3,26 +3,15 @@
 
 /* the body of the page */
 body { background-color: #e2ebf0; font-family: verdana; color: #0f487f; }
-/* non-hyperlink anchor tags */
-a 
-{
 
-} 
+/* non-hyperlink anchor tags */
+a { font-family: verdana; color: #0f487f; } 
+
 /* hyperlink, hyperlink that has been visited */
-a:link, a:visited
-{
- 
-}
+a:link, a:visited {font-family: verdana; color: #0f487f; }
+
 /* hyperlink being hovered over, hyperlink being pressed */
-a:active, a:hover
-{
- 
-}
-/* items on page with class Button */
-a.button
-{
- 
-}
+a:active, a:hover { font-family: verdana; color: blue; text-decoration: none; }
 
 /* the base font of the page */
 font
@@ -34,18 +23,18 @@ font
 /* for text with class="Small" (customize this view)*/
 font.small
 {
-  font-size:9pt;
+  font-size: 9pt;
 }	
 /* with class="Big" */
 font.big
 {
-  font-size:12pt;
+  font-size: 12pt;
 }    
 /* results.asp, the "CURRENT SEARCH" title */
 font.title
 {
-  font-size:14pt;
-  font-weight:bold;
+  font-size: 14pt;
+  font-weight: bold;
 }
 
 /* disclaimers, generally */
@@ -56,22 +45,34 @@ font.tiny
 }    	
 
 
-.petinfo
-{
-  text-align: center;
-  padding: 5;
+
+/* web header */
+#header {
+    background-image: url('../images/header.png');
+    background-repeat: no-repeat;
+    height: 150px;
+	width: 940px;
+	margin: auto;
 }
 
-#container { width: 100%; margin: auto; }
-#title { color: #0f487f; }
-.tagline { color: #0f487f; margin-top: -10px; }
-#content {}
+
+#container { width: 940px; margin: auto; }
+.title, .tagline { color: #0f487f; margin-top: -10px; display:none; visibility: hidden; }
+
 /* congrats text */
-#comment {  color: #0f487f; font-size: 20px; } 
-#image { margin-top: 20px; }
-#name { font-size: 24px; margin: 20px 0px; font-weight: bold; }
-#petinfo { float: left; background-color: #003366;  padding: 15px; color: #e2ebf0;  }
+#comment {  color: #0f487f; font-size: 20px; margin-top: 20px; } 
+#image { margin-top: 20px; width: 50%; height: 50%; }
+#name { font-size: 24px; margin-top: 20px; font-weight: bold; }
+
+/*adjust for mobile vs. web*/
+
+#petinfo { float: left; }
+
+#reserve { float: left; padding-bottom: 50px; position: absolute; top: 220px; left: 450px; }
+
+#head { display: none; visibility: hidden; }
 
 /*length of stay number */
-.length { font-size: 30px; font-weight: bold; margin-top: 15px;	 }
-#reserve { clear: both; }
+.length { font-size: 30px; font-weight: bold; margin-top: 15px;	padding-bottom: 15px; }*/
+
+#twitter { visibility: visible; }
