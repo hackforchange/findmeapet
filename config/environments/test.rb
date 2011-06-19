@@ -33,3 +33,7 @@ Findmeapet::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 end
+
+#Twilio:
+ENV['ACCOUNT_SID'] = 'AC41dd91b83642832d6300405f1732cc03'
+ENV['ACCOUNT_TOKEN'] = '55d23fc441708f769af09dcd205421d4'

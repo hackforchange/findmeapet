@@ -10,8 +10,8 @@ Findmeapet::Application.configure do
   config.whiny_nils = true
 
   # Show full error reports and disable caching
-  config.consider_all_requests_local       = true
-  config.action_view.debug_rjs             = true
+  config.consider_all_requests_local = true
+  config.action_view.debug_rjs = true
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
@@ -24,3 +24,6 @@ Findmeapet::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
+#Twilio:
+ENV['ACCOUNT_SID'] = 'AC41dd91b83642832d6300405f1732cc03'
+ENV['ACCOUNT_TOKEN'] = '55d23fc441708f769af09dcd205421d4'

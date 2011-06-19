@@ -32,6 +32,7 @@ gem 'koala'
 gem 'heroku'
 gem 'nokogiri'
 gem 'thin'
+gem 'twiliolib'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"

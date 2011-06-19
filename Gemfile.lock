@@ -104,6 +104,8 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
+    twiliolib (2.0.7)
+      builder (>= 2.1.2)
     tzinfo (0.3.27)
     vcr (1.9.0)
 
@@ -120,4 +122,5 @@ DEPENDENCIES
   rspec-rails (~> 2.4)
   sqlite3
   thin
+  twiliolib
   vcr

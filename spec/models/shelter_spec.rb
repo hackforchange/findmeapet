@@ -14,6 +14,7 @@ describe Shelter do
   describe "#update_pets" do
     it "should create lots of pets" do
       expect { VCR.use_cassette('all_pages') { @shelter.update_pets } }.to change { Pet.count }.by(185)
+      expect { VCR.use_cassette('all_pages') { @shelter.update_pets } }.to_not change { Pet.count}
     end
 
   end

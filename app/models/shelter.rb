@@ -3,7 +3,7 @@ require 'open-uri'
 
 class Shelter < ActiveRecord::Base
   #validates_presence_of :title, :latitude, :longitude, :shelter_code
-  validates_uniqueness_of :shelter_code, :title
+  #validates_uniqueness_of :shelter_code, :title
   has_many :pets
 
   def shelter_code
@@ -20,6 +20,14 @@ class Shelter < ActiveRecord::Base
 
   def longitude
     '-80.134065'
+  end
+
+  def city
+    'Miami'
+  end
+
+  def state
+    'FL'
   end
 
   def update_pets_first_page_only
