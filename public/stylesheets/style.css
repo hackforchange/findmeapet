@@ -64,15 +64,14 @@ font.tiny
 
 #container { width: 100%; margin: auto; }
 #title { color: #0f487f; }
-.tagline { color: #0f487f; margin-top: -20px; }
+.tagline { color: #0f487f; margin-top: -10px; }
 #content {}
 /* congrats text */
 #comment {  color: #0f487f; font-size: 20px; } 
 #image { margin-top: 20px; }
 #name { font-size: 24px; margin: 20px 0px; font-weight: bold; }
-#petinfo { width: 100%; float: left; background-color: #003366;  padding: 15px; }
-#infoleft { width: 50%; float: left; color: #e2ebf0; }
-#inforight { float: left;  margin-left: 15px; color: #e2ebf0; }
+#petinfo { float: left; background-color: #003366;  padding: 15px; color: #e2ebf0;  }
+
 /*length of stay number */
-.length { font-size: 30px; font-weight: bold; margin:  15px;	 }
+.length { font-size: 30px; font-weight: bold; margin-top: 15px;	 }
 #reserve { clear: both; }

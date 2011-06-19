@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(:version => 20110619002735) do
     t.date     "brought_to_shelter_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_url"
     t.string   "image_uri"
   end
 
