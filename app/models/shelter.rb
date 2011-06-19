@@ -65,7 +65,7 @@ class Shelter < ActiveRecord::Base
         tds = pet_item.css('td')
         petharbor_id = tds[1].content[/(.*) \((.*)\)/, 2]
         if Pet.find_by_petharbor_id(petharbor_id).present?
-          return
+          next
         else
           create_pet_from_tds(tds)
         end
