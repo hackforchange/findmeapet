@@ -12,7 +12,7 @@ class PeopleController < ApplicationController
                   :state => state,
                   :phone => parsed_request["registration"]["phone"].gsub!('-',""),
                   :email => parsed_request["registration"]["email"])
-    redirect_to :thank
+    redirect_to :thank_you
   end
 
   def thank_you
