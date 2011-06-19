@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
-gem 'koala'
+gem 'rest-graph'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -39,6 +39,7 @@ group :test, :development do
   gem 'vcr'
   gem 'fakeweb'
   gem 'sqlite3'
+  gem 'mocha'
 end
 
 group :production do
