@@ -5,7 +5,6 @@ class PeopleController < ApplicationController
   def registration
     rg = RestGraph.new(:app_id => APP_ID, :secret => APP_SECRET)
     puts APP_ID.inspect
-    logger.info "Params for registrations: #{params.inspect}"
 
     parsed_request = rg.parse_signed_request!(params["signed_request"])
     city,state = parsed_request["registration"]["location"]["name"].split(',')
@@ -14,7 +13,7 @@ class PeopleController < ApplicationController
                   :city => city,
                   :facebook_id => params["user_id"],
                   :state => state,
-                  :phone => parsed_request["registration"]["phone"].gsub!('-',""),
+                  :phone => parsed_request["registration"]["phone"].gsub('-',""),
                   :email => parsed_request["registration"]["email"])
     redirect_to people_thank_you_path
   end
