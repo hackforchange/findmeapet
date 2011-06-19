@@ -42,7 +42,7 @@ class Shelter < ActiveRecord::Base
   end
 
   def create_pet_from_tds(tds)
-    Pet.create(
+    Pet.create!(
         :petharbor_id =>tds[1].content[/(.*) \((.*)\)/, 2],
         :name => tds[1].content[/(.*) \((.*)\)/, 1],
         :gender => tds[2].content,

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Shelter do
   before do
-    @shelter=Shelter.new
+    @shelter=Shelter.create!
   end
   describe "#update_pets_first_page_only" do
     it "should create 10 pets the first time" do

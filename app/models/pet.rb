@@ -1,15 +1,16 @@
 class Pet < ActiveRecord::Base
-  include ActionController::UrlWriter
+  include Rails.application.routes.url_helpers
 
   validates_uniqueness_of :petharbor_id
   belongs_to :shelter
   validates_presence_of :shelter
+  after_create :send_texts_if_match
 
   def image_url
     "http://www.petharbor.com/" + image_uri
   end
 
-  def after_create
+  def send_texts_if_match
     # call twilio if match
     Person.find_all_by_city_and_state(shelter.city, shelter.state).each do |user|
       # send text message:
