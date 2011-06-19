@@ -88,7 +88,7 @@ a:link, a:visited {font-family: verdana; color: #FFFFFF !important; }
 /* hyperlink being hovered over, hyperlink being pressed */
 a:active, a:hover { font-family: verdana; color: #ffcc66 !important; text-decoration: none; background-color: #0f487f !important; }
 
-.img { text-align: center; width: 470px; }
+.img { text-align: center; width: 470px;  border: #555555 1px solid; }
 .congrats { text-align: center; line-height: 100%; margin-top: -5px;}
 .desc {  }
 .length { font-size: 150%; line-height: 18px; }

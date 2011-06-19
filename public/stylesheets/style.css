@@ -57,11 +57,11 @@ font.tiny
 
 
 #container { width: 940px; margin: auto; }
-.title, .tagline { color: #0f487f; margin-top: -10px; display:none; visibility: hidden; }
+.title, .tagline { color: #0f487f; margin-top: -10px; display: none; visibility: hidden; }
 
 /* congrats text */
 #comment {  color: #0f487f; font-size: 20px; margin-top: 20px; } 
-#image { margin-top: 20px; width: 50%; height: 50%; }
+#image { margin-top: 20px; width: 50%; height: 50%; border: #555555 1px solid; }
 #name { font-size: 24px; margin-top: 20px; font-weight: bold; }
 
 /*adjust for mobile vs. web*/
