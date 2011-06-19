@@ -21,7 +21,7 @@ class Pet < ActiveRecord::Base
       }
       resp = TWILIO.request("/2010-04-01/Accounts/#{ENV['ACCOUNT_SID']}/SMS/Messages",
                             "POST", t)
-      raise "Twilio call failed with status code #{resp.code} and body #{resp.body}" unless resp_is_a? Net::HTTPCreated
+      raise "Twilio call failed with status code #{resp.code} and body #{resp.body}" unless resp.is_a? Net::HTTPCreated
     end
   end
 end
