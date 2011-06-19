@@ -58,14 +58,24 @@ class Shelter < ActiveRecord::Base
   def update_pets
     doc = Nokogiri::HTML(open(url_for_page(1)))
     total_pages = get_total_pages(doc)
+    first = true
+    latest_date_brought_into_shelter = nil
 
     total_pages.downto(1).each do |page|
       doc = Nokogiri::HTML(open(url_for_page page))
       doc.css('table.ResultsTable tr').reverse[0..-2].each do |pet_item|
         tds = pet_item.css('td')
+        if first
+          latest_date_brought_into_shelter = parse_date_from_td(tds[6])
+          first = false
+        end
         petharbor_id = tds[1].content[/(.*) \((.*)\)/, 2]
         if Pet.find_by_petharbor_id(petharbor_id).present?
-          next
+          if latest_date_brought_into_shelter == parse_date_from_td(tds[6])
+            next
+          else
+            return
+          end
         else
           create_pet_from_tds(tds)
         end
