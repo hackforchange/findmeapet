@@ -3,10 +3,12 @@ class PeopleController < ApplicationController
   # GET /people.xml
    
   def registration
-    rg = RestGraph.new( :app_id => APP_ID, :secret => APP_SECRET)
+    rg = RestGraph.new(:app_id => APP_ID, :secret => APP_SECRET)
+    puts APP_ID.inspect
     parsed_request = rg.parse_signed_request!(params["signed_request"])
     city,state = parsed_request["registration"]["location"]["name"].split(',')
-    Person.create(:name => parsed_request["registration"]["name"],
+    Rails.logger.info parsed_request.inspect
+    puts Person.create!(:name => parsed_request["registration"]["name"],
                   :city => city,
                   :facebook_id => params["user_id"],
                   :state => state,
