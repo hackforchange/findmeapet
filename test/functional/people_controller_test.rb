@@ -1,49 +1,13 @@
 require 'test_helper'
 
 class PeopleControllerTest < ActionController::TestCase
-  setup do
-    @person = people(:one)
+  test "post registration to signup" do
+    PeopleController::APP_ID = "blah"
+    PeopleController::APP_SECRET = "blah"
+    RestGraph.any_instance.stubs(:parse_signed_request).returns("registration"=>{"name"=>"Corey Grusden", "email"=>"corey.grusden@gmail.com", "location"=>{"name"=>"San Francisco, California", "id"=>114952118516947}, "phone"=>"904-476-6615"}, "registration_metadata"=>{"fields"=>"[{'name':'name'},{'name':'email'},{'name':'location'},\n {'name':'phone', 'description':'Phone Number','type':'text'}]"}, "user"=>{"country"=>"us", "locale"=>"en_US"}, "user_id"=>"208102217")
+    post :registration 
+    User.count.should == 1
+    User.first.phone.should_not be_nil
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:people)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
-  test "should create person" do
-    assert_difference('Person.count') do
-      post :create, :person => @person.attributes
-    end
-
-    assert_redirected_to person_path(assigns(:person))
-  end
-
-  test "should show person" do
-    get :show, :id => @person.to_param
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, :id => @person.to_param
-    assert_response :success
-  end
-
-  test "should update person" do
-    put :update, :id => @person.to_param, :person => @person.attributes
-    assert_redirected_to person_path(assigns(:person))
-  end
-
-  test "should destroy person" do
-    assert_difference('Person.count', -1) do
-      delete :destroy, :id => @person.to_param
-    end
-
-    assert_redirected_to people_path
-  end
 end

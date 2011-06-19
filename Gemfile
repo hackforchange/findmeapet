@@ -39,6 +39,7 @@ group :test, :development do
   gem 'vcr'
   gem 'fakeweb'
   gem 'sqlite3'
+  gem 'mocha'
 end
 
 group :production do

@@ -5,7 +5,17 @@ class PeopleController < ApplicationController
   def registration
     rg = RestGraph.new( :app_id => APP_ID, :secret => APP_SECRET)
     parsed_request = rg.parse_signed_request!(params["signed_request"])
-    render :text => parsed_request.inspect
+    city,state = parsed_request["registration"]["location"]["name"].split(',')
+    Person.create(:name => parsed_request["registration"]["name"],
+                  :city => city,
+                  :facebook_id => params["user_id"],
+                  :state => state,
+                  :phone => parsed_request["registration"]["phone"].gsub!('-',""),
+                  :email => parsed_request["registration"]["email"])
+    redirect_to :thank
+  end
+
+  def thank_you
   end
 
   def index
