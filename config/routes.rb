@@ -1,6 +1,12 @@
 Findmeapet::Application.routes.draw do
-  resources :people
   resources :pets
+
+  resources :people do 
+    collection do
+      get 'registration'
+      post 'registration'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
