@@ -64,14 +64,7 @@ body  {
 }
 --> 
 
-#header {
-    background-image: url('../images/header.png');
-    background-repeat: no-repeat;
-    height: 150px;
-	width: 940px;
-	margin: auto;
-	margin-top: 3px;
-}
+
 
 .title, .tagline { color: #0f487f; margin-top: -10px; display:none; visibility: hidden; }
 

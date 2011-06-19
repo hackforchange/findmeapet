@@ -70,11 +70,11 @@ body  {
 -->
 
 #header {
-    background-image: url('../images/mobile-header.png') ;
+    background-image: url('../images/mobile-header.png') !important;
     background-repeat: no-repeat;
     height: 130px;
 	width: 480px;
-	margin: auto;
+	margin: auto !important;
 	margin-top: 3px;
 }
 
