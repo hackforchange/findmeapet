@@ -5,7 +5,7 @@ class PeopleController < ApplicationController
   def registration
     rg = RestGraph.new(:app_id => APP_ID, :secret => APP_SECRET)
     puts APP_ID.inspect
-    Logger.info "Params for registrations: #{params.inspect}"
+    logger.info "Params for registrations: #{params.inspect}"
 
     parsed_request = rg.parse_signed_request!(params["signed_request"])
     city,state = parsed_request["registration"]["location"]["name"].split(',')
