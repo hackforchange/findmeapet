@@ -3,7 +3,9 @@ class PeopleController < ApplicationController
   # GET /people.xml
    
   def registration
-    raise params.inspect
+    rg = RestGraph.new( :app_id => APP_ID, :secret => APP_SECRET)
+    parsed_request = rg.parse_signed_request!(params["signed_request"])
+    render :text => parsed_request.inspect
   end
 
   def index
