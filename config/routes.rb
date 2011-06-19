@@ -2,7 +2,8 @@ Findmeapet::Application.routes.draw do
   resources :pets
 
   match '/people/thank_you', :to => 'people#thank_you'
-  resources :people do 
+  match '/notifications', :to => 'notifications#receive'
+  resources :people do
     collection do
       get 'registration'
       post 'registration'

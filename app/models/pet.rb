@@ -12,7 +12,7 @@ class Pet < ActiveRecord::Base
 
   def send_texts_if_match
     # call twilio if match
-    Person.find_all_by_city_and_state(shelter.city, shelter.state).each do |user|
+    Person.find_all_by_city_and_state_and_allow_texts(shelter.city, shelter.state, true).each do |user|
       # send text message:
       t = {
           'From' => ENV["CALLER_ID"],
