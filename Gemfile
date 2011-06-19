@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
-gem 'pg'
 gem 'koala'
 
 # Bundle edge Rails instead:
@@ -30,7 +29,6 @@ gem 'koala'
 #   gem 'webrat'
 # end
 
-gem 'pg'
 gem 'heroku'
 gem 'nokogiri'
 gem 'thin'
@@ -40,4 +38,8 @@ group :test, :development do
   gem 'vcr'
   gem 'fakeweb'
   gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
