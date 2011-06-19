@@ -14,7 +14,7 @@ class Pet < ActiveRecord::Base
     Person.find_all_by_city_and_state(shelter.city, shelter.state).each do |user|
       # send text message:
       t = {
-          'From' => "(415) 599-2671",
+          'From' => ENV["CALLER_ID"],
           'To' => user.phone,
           'Body' => "Dog matched. View: #{pet_url(self, :host => 'findmeapet.heroku.com')}"
       }
