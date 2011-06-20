@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110620082216) do
+ActiveRecord::Schema.define(:version => 20110620082911) do
 
   create_table "people", :force => true do |t|
     t.string   "name"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(:version => 20110620082216) do
 
   create_table "shelters", :force => true do |t|
     t.string   "name"
-    t.string   "latitude"
-    t.string   "longitude"
+    t.string   "lat"
+    t.string   "lng"
     t.string   "shelter_code"
     t.datetime "created_at"
     t.datetime "updated_at"
