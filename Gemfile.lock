@@ -37,6 +37,7 @@ GEM
       abstract (>= 1.0.0)
     eventmachine (0.12.10)
     fakeweb (1.3.0)
+    geokit (1.6.0)
     heroku (2.3.3)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
@@ -111,6 +112,7 @@ PLATFORMS
 
 DEPENDENCIES
   fakeweb
+  geokit
   heroku
   mocha
   nokogiri
