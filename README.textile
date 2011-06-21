@@ -1,9 +1,13 @@
 bq. Find homes for perfectly good pets in shelters to lessen the burden on rescues, or worse, before the pets are euthanized.
 
 h2. TODO
-* Find shelters that are within 200miles of a user
+
+* Alert users of new pets of 200 miles of their current location (lat/lng)
+* Create a way to create donations easily for a specific dog
+* Add some sort of Facebook integration for sharing this dog (create a canned message)
+* Add some sort of Facebook integration for sharing this dog (create a canned message)
 
 
 h2. Our Financials
-https://spreadsheets.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AqnboyFt3yiTdDRFdU96UmxIejVoQzRFdWdzTEZWX2c&output=html
 
+https://spreadsheets.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AqnboyFt3yiTdDRFdU96UmxIejVoQzRFdWdzTEZWX2c&output=html
