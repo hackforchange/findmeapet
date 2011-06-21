@@ -13,7 +13,7 @@ class PeopleController < ApplicationController
                   :city => city,
                   :facebook_id => params["user_id"],
                   :state => state,
-                  :phone => parsed_request["registration"]["phone"].gsub('-',""),
+                  :phone => parsed_request["registration"]["phone"].scan(/\d/).join,
                   :email => parsed_request["registration"]["email"])
     redirect_to people_thank_you_path
   end
