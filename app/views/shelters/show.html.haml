@@ -1,0 +1,5 @@
+%h2= shelter.name
+
+- shelter.pets(:order => "created_at DESC").each do |pet|
+  %p
+    = link_to image_tag(pet.image_uri), pet

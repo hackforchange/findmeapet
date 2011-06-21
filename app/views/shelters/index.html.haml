@@ -1,0 +1,5 @@
+%h2 Available Shelters
+
+- Shelter.all(:order => "name ASC").each do |shelter|
+  %p
+    = link_to shelter.name, shelter
