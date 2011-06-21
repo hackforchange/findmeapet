@@ -40,7 +40,8 @@ group :test, :development do
   gem 'vcr'
   gem 'fakeweb'
   gem 'sqlite3'
-  gem 'mocha'
+  gem 'mocha'  
+  gem 'RedCloth'
 end
 
 group :production do
