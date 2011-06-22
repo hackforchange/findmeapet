@@ -6,10 +6,9 @@ class Pet < ActiveRecord::Base
   validates_presence_of :shelter
   after_create :send_texts_if_match
 
-  SHELTER_IMAGE_URI_PREFIX = {'MIAD' => "http://www.petharbor.com/"}
-
   def image_url
-    "#{SHELTER_IMAGE_URI_PREFIX[shelter.shelter_code]}#{image_uri}"
+    images = {'MIAD' => "http://www.petharbor.com/get_image.asp?RES=thumb&amp;ID=#{petharbor_id}&amp;LOCATION=#{shelter.shelter_code}"}
+    images[shelter.shelter_code]
   end
 
   def send_texts_if_match
