@@ -11,6 +11,9 @@
        }
   </script>
 
+</head>
+<body>
+<div id="fb-root"></div>
   <script>
     window.fbAsyncInit = function() {
       FB.init({appId: '208725265839462', status: true, cookie: true,
@@ -26,9 +29,6 @@
       document.getElementById('fb-root').appendChild(e);
     }());
   </script>
-</head>
-<body>
-<div id="fb-root"></div>
 
 <%= yield %>
 
