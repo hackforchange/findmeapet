@@ -2,4 +2,5 @@
 
 - shelter.pets(:order => "created_at DESC", :limit => 50).each do |pet|
   %p
-    = link_to image_tag(pet.image_uri), pet
+    %a{:href => pet_url(pet, :host => 'findmeapet.heroku.com')}
+      %img= pet.image_uri
