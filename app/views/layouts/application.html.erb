@@ -6,12 +6,12 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 <script>
-     function post_to_facebook(link, image_url, name, breed, age, shelter_name) {
+     function post_to_facebook(link, image_url, name, breed, age, shelter_name, caption) {
         FB.ui({ method: 'feed', 
                 link: link,
                 picture: image_url,
-                caption: name + ' - ' + breed + ' - ' + age,
-                name: 'URGENT - (' + shelter_name + ') - '+ name
+                caption: caption,
+                name: name
              });
      }
 </script>
