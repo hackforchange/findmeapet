@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110620082911) do
+ActiveRecord::Schema.define(:version => 20110622003606) do
 
   create_table "people", :force => true do |t|
     t.string   "name"
@@ -47,6 +47,9 @@ ActiveRecord::Schema.define(:version => 20110620082911) do
     t.string   "shelter_code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "city",         :limit => 32
+    t.string   "state",        :limit => 16
+    t.string   "title",        :limit => 24
   end
 
 end

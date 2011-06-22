@@ -10,30 +10,6 @@ class Shelter < ActiveRecord::Base
     {'MIAD' => "http://www.petharbor.com/"}
   end
 
-  def shelter_code
-    'MIAD'
-  end
-
-  def title
-    "Miami-Dade Animal Services"
-  end
-
-  def latitude
-    '25.813025'
-  end
-
-  def longitude
-    '-80.134065'
-  end
-
-  def city
-    'Miami'
-  end
-
-  def state
-    'FL'
-  end
-
   def update_pets_first_page_only
     doc = Nokogiri::HTML(open("http://www.petharbor.com/results.asp?searchtype=ADOPT&start=4&stylesheet=include/default.css&frontdoor=1&friends=1&samaritans=1&nosuccess=0&orderby=Brought%20to%20the%20Shelter&rows=10&imght=120&imgres=thumb&view=sysadm.v_animal&nomax=1&fontface=arial&fontsize=10&miles=200&lat=25.813025&lon=-80.134065&shelterlist=%27#{shelter_code}%27&atype=dog&where=type_DOG&PAGE=1"))
 
