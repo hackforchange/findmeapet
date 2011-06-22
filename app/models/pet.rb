@@ -7,8 +7,8 @@ class Pet < ActiveRecord::Base
   after_create :send_texts_if_match
 
   def image_url
-    images = {'MIAD' => "http://www.petharbor.com/get_image.asp?RES=thumb&ID=#{petharbor_id}&LOCATION=#{shelter.shelter_code}"}
-    images[shelter.shelter_code]
+    images = {'MIAD' => "http://www.petharbor.com/get_image.asp?RES=thumb&ID=#{petharbor_id}&LOCATION=#{shelter.code}"}
+    images[shelter.code]
   end
 
   def send_texts_if_match
