@@ -5,10 +5,26 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+<script>
+     function post_to_facebook(link, image, name, breed, age) {
+        FB.ui({ method: 'feed', 
+                link: link,
+                picture: image_url,
+                caption: name + ' - ' + breed + ' - ' + age,
+                name: 'URGENT - (' + title + ') - '+ name,
+             });
+     }
+</script>
 </head>
 <body>
 
 <%= yield %>
+
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js">
+<script>
+     FB.init({ appId:'208725265839462', cookie:true, status:true, xfbml:true });
+</script>
 
 </body>
 </html>

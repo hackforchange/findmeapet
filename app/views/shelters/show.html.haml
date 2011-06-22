@@ -1,7 +1,10 @@
-%h2= shelter.name
+%h2= shelter.title
 
-- shelter.pets(:order => "created_at DESC", :limit => 50).each do |pet|
+- shelter.pets(:order => "created_at ASC", :limit => 100).each do |pet|
   %p
     = pet.name
-    %a{:href => pet_url(pet, :host => 'findmeapet.heroku.com')}
+    - age = "#{pet.age/365} years old"
+    - link = pet_url(pet, :host => 'findmeapet.heroku.com')
+    %a{:href => link}
       %img{:src => pet.image_url}
+    = link_to_function "Post To Facebook", "post_to_facebook(#{link}, #{pet.image_url}, #{pet.name}, #{pet.breed}, #{age})"
