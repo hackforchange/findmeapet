@@ -6,6 +6,10 @@ class Shelter < ActiveRecord::Base
   #validates_uniqueness_of :shelter_code, :title
   has_many :pets
 
+  def image_prefix
+    {'MIAD' => "http://www.petharbor.com/"}
+  end
+
   def shelter_code
     'MIAD'
   end
