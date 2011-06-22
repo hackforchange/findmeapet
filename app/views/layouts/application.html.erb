@@ -6,7 +6,7 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 <script>
-     function post_to_facebook(link, image, name, breed, age) {
+     function post_to_facebook(link, image_url, name, breed, age) {
         FB.ui({ method: 'feed', 
                 link: link,
                 picture: image_url,
