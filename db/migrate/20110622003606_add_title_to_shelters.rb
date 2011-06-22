@@ -1,6 +1,6 @@
 class AddTitleToShelters < ActiveRecord::Migration
   def self.up
-    add_column :shelters, :title, :string, :limit => 24
+    add_column :shelters, :title, :string
   end
 
   def self.down
