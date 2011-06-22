@@ -7,4 +7,4 @@
     - link = pet_url(pet, :host => 'findmeapet.heroku.com')
     %a{:href => link}
       %img{:src => pet.image_url}
-    = link_to_function "Post To Facebook", "post_to_facebook('#{link}', '#{pet.image_url}', '#{pet.name}', '#{pet.breed}', '#{age}');"
+    = link_to_function "Post To Facebook", "post_to_facebook('#{link}', '#{pet.image_url}', '#{pet.name}', '#{pet.breed}', '#{age}', '#{shelter.title}');"
