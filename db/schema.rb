@@ -44,13 +44,12 @@ ActiveRecord::Schema.define(:version => 20110622005617) do
     t.string   "name"
     t.string   "lat"
     t.string   "lng"
-    t.string   "shelter_code"
+    t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "city",         :limit => 32
-    t.string   "state",        :limit => 16
-    t.string   "title",        :limit => 24
-    t.string   "code",         :limit => 8
+    t.string   "city",       :limit => 32
+    t.string   "state",      :limit => 16
+    t.string   "title"
   end
 
 end

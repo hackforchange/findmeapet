@@ -1,9 +1,9 @@
 class AddCodeToShelters < ActiveRecord::Migration
   def self.up
-    add_column :shelters, :code, :string, :limit => 8
+    rename_column :shelters, :shelter_code, :code
   end
 
   def self.down
-    remove_column :shelters, :code
+    rename_column :shelters, :code, :shelter_code
   end
 end
