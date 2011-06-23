@@ -1,0 +1,9 @@
+%p.notice= notice
+
+%p
+  %b== #{@person.name}'s Profile
+
+%h6 Shelter's they're recieving notifications from
+- @person.shelters.each do |shelter|
+  %p
+    = link_to shelter.title, shelter

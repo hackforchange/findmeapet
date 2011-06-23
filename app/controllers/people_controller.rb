@@ -2,16 +2,26 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.xml
    
+  helper_method :person
+
+  def person
+    @person ||= Person.find(session[:person_id])
+  end
+
   def registration
     rg = RestGraph.new(:app_id => APP_ID, :secret => APP_SECRET)
     parsed_request = rg.parse_signed_request!(params["signed_request"])
     city,state = parsed_request["registration"]["location"]["name"].split(/,/)
-    Person.create!(:name => parsed_request["registration"]["name"],
-                  :city => city.strip,
-                  :facebook_id => parsed_request["user_id"],
-                  :state => state.strip,
-                  :phone => parsed_request["registration"]["phone"].scan(/\d/).join,
-                  :email => parsed_request["registration"]["email"])
+
+    person = Person.create!(:name => parsed_request["registration"]["name"],
+                            :city => city.strip,
+                            :facebook_id => parsed_request["user_id"],
+                            :state => state.strip,
+                            :phone => parsed_request["registration"]["phone"].scan(/\d/).join,
+                            :email => parsed_request["registration"]["email"])
+
+    session[:person_id] = person.id
+
     redirect_to people_thank_you_path
   end
 

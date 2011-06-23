@@ -10,6 +10,6 @@ class SheltersController < ApplicationController
   protected 
 
   def shelter
-    Shelter.find(params[:id], :include => :pets)
+    Shelter.find(params[:id])
   end
 end
