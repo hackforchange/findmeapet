@@ -22,7 +22,7 @@ class PeopleController < ApplicationController
 
     session[:person_id] = person.id
 
-    redirect_to people_thank_you_path
+    redirect_to person_path(person.id)
   end
 
   def thank_you
