@@ -8,7 +8,7 @@ class PeopleController < ApplicationController
     city,state = parsed_request["registration"]["location"]["name"].split(/,/)
     Person.create!(:name => parsed_request["registration"]["name"],
                   :city => city.strip,
-                  :facebook_id => params["user_id"],
+                  :facebook_id => parsed_request["user_id"],
                   :state => state.strip,
                   :phone => parsed_request["registration"]["phone"].scan(/\d/).join,
                   :email => parsed_request["registration"]["email"])
