@@ -20,9 +20,13 @@ class Pet < ActiveRecord::Base
           'To' => user.phone,
           'Body' => "Dog matched. View: #{pet_url(self, :host => 'findmeapet.heroku.com')}"
       }
-      resp = TWILIO.request("/2010-04-01/Accounts/#{ENV['ACCOUNT_SID']}/SMS/Messages",
-                            "POST", t)
-      raise "Twilio call failed with status code #{resp.code} and body #{resp.body}" unless resp.is_a? Net::HTTPCreated
+      begin
+        resp = TWILIO.request("/2010-04-01/Accounts/#{ENV['ACCOUNT_SID']}/SMS/Messages",
+                              "POST", t)
+        raise "Twilio call failed with status code #{resp.code} and body #{resp.body}" unless resp.is_a? Net::HTTPCreated
+      rescue Exception => e
+        Rails.logger.info e.message
+      end
     end
   end
 end
